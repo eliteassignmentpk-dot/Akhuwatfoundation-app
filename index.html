@@ -1,0 +1,791 @@
+<!-- ===== INDEX.HTML (Home Page) ===== -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akhuwat Foundation | Interest-Free Islamic Loans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2c5282;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #1a365d;
+        }
+        
+        .btn-green {
+            background-color: #1a5f23;
+        }
+        
+        .btn-green:hover {
+            background-color: #13461b;
+        }
+        
+        /* ===== HEADER ===== */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c5282;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo span {
+            font-weight: 400;
+            color: #555;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            color: #444;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #2c5282;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #2c5282;
+            cursor: pointer;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 30, 60, 0.85), rgba(0, 30, 60, 0.85)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* ===== MAIN CONTENT AREA ===== */
+        .main-content {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .content-left {
+            flex: 3;
+        }
+        
+        .content-right {
+            flex: 1;
+            background-color: #f0f7f0;
+            padding: 25px;
+            border-radius: 8px;
+            border-right: 5px solid #1a5f23;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: #2c5282;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .intro-text {
+            font-size: 18px;
+            margin-bottom: 25px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+        
+        .quran-ayat {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 5px solid #2c5282;
+        }
+        
+        .arabic-text {
+            font-size: 28px;
+            text-align: right;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #1a5f23;
+            direction: rtl;
+        }
+        
+        .translation {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #2c5282, #1a5f23);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .cta-box h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-box p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* ===== CATEGORIES SECTION ===== */
+        .categories {
+            margin-bottom: 80px;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-icon {
+            background-color: #f0f7f0;
+            padding: 25px;
+            text-align: center;
+            font-size: 40px;
+            color: #2c5282;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c5282;
+        }
+        
+        .card-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            margin-bottom: 80px;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #2c5282;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2c5282;
+        }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #1a365d;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #4CAF50;
+        }
+        
+        .footer-section p {
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 15px;
+            color: #4CAF50;
+            margin-top: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: #4CAF50;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 15px;
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            nav {
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 0 0 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 80px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 15px;
+            }
+            
+            .categories-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .quran-ayat {
+                padding: 20px;
+            }
+            
+            .arabic-text {
+                font-size: 24px;
+            }
+        }
+        
+        /* ===== UTILITY CLASSES ===== */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+        
+        .mt-30 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                Akhuwat <span>Foundation</span>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="products.html">Products</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Interest-Free Loans for a Dignified Life</h1>
+            <p>Akhuwat Foundation ghareeb aur zaruratmand afraad ko bina sood qarz faraham karti hai taake woh khud-mukhtar ban saken.</p>
+            <div class="hero-buttons">
+                <a href="#application" class="btn">Apply for Loan</a>
+                <a href="categories.html" class="btn btn-green">View Categories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <div class="main-content">
+            <div class="content-left">
+                <h2 class="section-title">Introduction to Akhuwat Foundation</h2>
+                <p class="intro-text">
+                    Akhuwat Foundation is a pioneering non-profit organization dedicated to providing interest-free microfinance to empower the underprivileged in Pakistan. Established on the principles of Qarz-e-Hasna (beautiful loan), our mission is to alleviate poverty through Islamic social finance. Hum bina sood ke qarze ke zariye ghareeb logon ko unki izzat bachate hue unki maali zaroorat poora karte hain.
+                </p>
+                <p class="intro-text">
+                    Our model is based on the Islamic concept of brotherhood (Akhuwat) and social responsibility. We believe in empowering individuals through financial inclusion while maintaining their dignity. Qarz-e-Hasna is not just a loan but a trust between the lender and borrower, rooted in mutual respect and Islamic values.
+                </p>
+                
+                <div class="quran-ayat">
+                    <div class="arabic-text">مَن ذَا الَّذِي يُقْرِضُ اللَّهَ قَرْضًا حَسَنًا فَيُضَاعِفَهُ لَهُ أَضْعَافًا كَثِيرَةً</div>
+                    <div class="translation">"Who is it that will loan to Allah a beautiful loan which Allah will multiply for him many times over?" (Surah Al-Baqarah, 2:245)</div>
+                    <p>Yeh ayat hamare kaam ki asal bunyad hai. Qarz-e-Hasna ka tasawwur Islam mein ek azeem aur sawab ka kaam hai jahan aap Allah ki raah mein dete hain aur uska badla aapko Allah ki taraf se milta hai.</p>
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="cta-box">
+                    <h3>Ready to Transform Your Life?</h3>
+                    <p>Apply for an interest-free loan today and take the first step towards financial independence while staying true to Islamic principles.</p>
+                    <a href="#application" class="btn">Apply Now</a>
+                </div>
+            </div>
+            
+            <div class="content-right">
+                <h3>Islamic Perspective on Interest</h3>
+                <div class="arabic-text" style="font-size: 22px; margin: 20px 0;">يَمْحَقُ اللَّهُ الرِّبَا وَيُرْبِي الصَّدَقَاتِ</div>
+                <p>"Allah destroys interest and gives increase for charity." (Surah Al-Baqarah, 2:276)</p>
+                <p style="margin-top: 20px;">Islam mein sood (interest) ko sakht mana gaya hai kyunkeh yeh ghareeb logon par zulm hai aur maashray mein na-insaafi barhata hai. Bina sood qarz dekar hum asal Islamic ehsaas e hamdardi ka izhaar karte hain.</p>
+            </div>
+        </div>
+        
+        <!-- CATEGORIES SECTION -->
+        <section class="categories">
+            <h2 class="section-title text-center">Loan Categories</h2>
+            <p class="text-center mb-30" style="font-size: 18px; color: #666; max-width: 800px; margin: 0 auto;">Select from our range of interest-free loan categories designed to meet various needs while adhering to Islamic principles.</p>
+            
+            <div class="categories-grid">
+                <!-- Each category card will link to a separate page -->
+                <a href="car-loan.html" class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Car Loan</h3>
+                        <p>Bina sood gari loan zaruratmand logon ke liye jo rozana safar ya kaam ke liye gari ki zaroorat rakhte hain.</p>
+                    </div>
+                </a>
+                
+                <a href="house-loan.html" class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>House Loan</h3>
+                        <p>Ghar banane ya kharedne ke liye bina sood qarz taake har kisi ko apna ghar hasil karne ka moqa mile.</p>
+                    </div>
+                </a>
+                
+                <a href="business-loan.html" class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Business Loan</h3>
+                        <p>Chotay karobar aur dukaan ke liye bina sood maali imdaad taake log apne paon par khare ho saken.</p>
+                    </div>
+                </a>
+                
+                <a href="personal-loan.html" class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Personal Loan</h3>
+                        <p>Zaroori shadi, ilaj ya kisi aur zaroori maali zaroorat ke liye bina sood qarz ki facility.</p>
+                    </div>
+                </a>
+                
+                <a href="student-loan.html" class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Student Loan</h3>
+                        <p>Talba ko unki taleem ke liye financial support taake koi bhi lachaar talib-e-ilm taleem se mahroom na rahe.</p>
+                    </div>
+                </a>
+                
+                <a href="umrah-loan.html" class="category-card">
+                    <div class="card-icon">
+                        <i class="fas fa-kaaba"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Umrah Loan</h3>
+                        <p>Umrah ki khwahish rakhne walon ke liye bina sood qarz ki facility taake har kisi ko is ibadat ka moqa mile.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+            <h2 class="section-title text-center">Success Stories</h2>
+            <p class="text-center mb-30" style="font-size: 18px; color: #666; max-width: 800px; margin: 0 auto;">Listen to what our beneficiaries have to say about their experience with Akhuwat Foundation's interest-free loans.</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Mujhe Akhuwat Foundation se business loan mila jiski madad se main apni choti dukaan khol saka. Bina sood ke qarz ne mujhe apne paon par khara hone ka moqa diya. Alhamdulillah ab main apna ghar chala raha hoon."
+                    </div>
+                    <div class="testimonial-author">- Muhammad Asif, Lahore</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Meri beti ki shadi ke liye personal loan ki zaroorat thi. Bank se sood par qarz lena mushkil tha. Akhuwat ne bina sood qarz de kar meri izzat bachai aur meri beti ki shadi behtareen tareeqe se ho saki."
+                    </div>
+                    <div class="testimonial-author">- Ayesha Bibi, Islamabad</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Main nay student loan liya tha apni engineering ki degree complete karne ke liye. Aaj main ek achi company mein job kar raha hoon aur apna qarz bhi ada kar chuka hoon. Yeh sirf qarz nahi, zindagi badalne ka zariya tha."
+                    </div>
+                    <div class="testimonial-author">- Ahmed Raza, Karachi</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- WhatsApp Application Section -->
+        <section id="application" class="categories">
+            <h2 class="section-title text-center">Apply for Loan</h2>
+            <div style="max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <div id="applicationForm">
+                    <h3 style="color: #2c5282; margin-bottom: 30px; text-align: center;">Loan Application Form</h3>
+                    
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #555;">Select Category</label>
+                        <select id="loanCategory" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                            <option value="">-- Select Loan Category --</option>
+                            <option value="Car Loan">Car Loan</option>
+                            <option value="House Loan">House Loan</option>
+                            <option value="Business Loan">Business Loan</option>
+                            <option value="Personal Loan">Personal Loan</option>
+                            <option value="Student Loan">Student Loan</option>
+                            <option value="Umrah Loan">Umrah Loan</option>
+                        </select>
+                    </div>
+                    
+                    <div style="margin-bottom: 25px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #555;">Select Loan Amount</label>
+                        <select id="loanAmount" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+                            <option value="">-- Select Loan Amount --</option>
+                            <option value="50,000">Rs. 50,000</option>
+                            <option value="100,000">Rs. 100,000</option>
+                            <option value="500,000">Rs. 500,000</option>
+                            <option value="1,000,000">Rs. 1,000,000</option>
+                            <option value="1,500,000">Rs. 1,500,000</option>
+                            <option value="2,000,000">Rs. 2,000,000</option>
+                            <option value="3,000,000">Rs. 3,000,000</option>
+                            <option value="5,000,000">Rs. 5,000,000</option>
+                        </select>
+                    </div>
+                    
+                    <button id="whatsappBtn" class="btn btn-green" style="width: 100%; padding: 15px; font-size: 18px;">
+                        <i class="fab fa-whatsapp"></i> Apply on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Akhuwat</h3>
+                    <p>Akhuwat Foundation is Pakistan's largest interest-free microfinance organization. We are committed to poverty alleviation through Islamic social finance based on the principles of Qarz-e-Hasna.</p>
+                    <p>Hamara maqsad ghareebi khatam karna hai bina sood ke qarze ke zariye, Islamic usoolon par amal karte hue.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> <span>Plot 23, Street 45, Sector G-10/4, Islamabad, Pakistan</span></li>
+                        <li><i class="fas fa-phone"></i> <span>+92 51 1234567</span></li>
+                        <li><i class="fas fa-envelope"></i> <span>info@akhuwat.org.pk</span></li>
+                        <li><i class="fab fa-whatsapp"></i> <span>+92 341 6855860</span></li>
+                    </ul>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="contact-info" style="list-style: disc; padding-left: 20px;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="categories.html">Loan Categories</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Akhuwat Foundation. All rights reserved. | Interest-Free Microfinance for Poverty Alleviation</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+            this.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : 
+                '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('mainNav');
+                const btn = document.getElementById('mobileMenuBtn');
+                nav.classList.remove('active');
+                btn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // WhatsApp Application Functionality
+        document.getElementById('whatsappBtn').addEventListener('click', function() {
+            const category = document.getElementById('loanCategory').value;
+            const amount = document.getElementById('loanAmount').value;
+            
+            if (!category || !amount) {
+                alert('Please select both Category and Loan Amount');
+                return;
+            }
+            
+            // Format message
+            const message = `Selected Category: ${category}%0ASelected Loan Amount: ${amount}%0AAkhuwat Foundation Loan Inquiry`;
+            
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/03416855860?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>

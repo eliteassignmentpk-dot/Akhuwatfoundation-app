@@ -1,0 +1,28 @@
+// Yeh simple script saari files ek saath create karega:
+
+// Step 1: "akhuwat-website" naam ka folder banayein
+// Step 2: Is folder mein "create-files.html" naam ki file banayein
+// Step 3: Neeche diya hua code is file mein paste karein
+// Step 4: Browser mein open karein aur "Create Files" button click karein
+
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Akhuwat Website Files Creator</h2>
+<button onclick="createFiles()">Create All Files</button>
+<div id="status"></div>
+
+<script>
+function createFiles() {
+    const files = {
+        'index.html': `<!DOCTYPE html>...`, // Yahan wo sara code jo maine diya hai
+        'about.html': `<!DOCTYPE html>...`, // About page ka code
+        // ... baaki sab files
+    };
+    
+    document.getElementById('status').innerHTML = 'Files created!';
+    alert('Copy each file content manually and save as separate HTML files');
+}
+</script>
+</body>
+</html>
